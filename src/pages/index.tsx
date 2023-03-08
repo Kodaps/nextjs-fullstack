@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import { FeatureCard } from "@/components/FeatureCard";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -13,7 +14,54 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-<main><h1 className='text-3xl font-bold'>Hello world</h1></main>
+      <main>
+        <section className="hero">
+          <div className="hero-content flex-col md:flex-row">
+            <Image
+              className="w-full md:w-1/2 p-5"
+              src="/mountain_climb.png"
+              alt="main climbing a mountain"
+              width="768"
+              height="512"
+            />
+
+            <div className="w-full md:w-1/2">
+              <h1 className="text-5xl font-bold py-3">
+                Have fun tracking your goals using OKR
+              </h1>
+              <h2 className="text-xl pb-3">
+                OKR is a proven methology used by Intel and Google to beat
+                expectations
+              </h2>
+              <span className="btn btn-primary">Learn more</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="text-center mt-4">
+          <h3 className="text-xl pb-3">Our features</h3>
+          <div className="flex w-full md:justify-around flex-col md:flex-row">
+            <FeatureCard
+              className="w-full md:w-1/4"
+              title="Argument 1"
+              description="This is really cool"
+              image="/mountain_climb.png"
+            />
+            <FeatureCard
+              className="w-full md:w-1/4"
+              title="Argument 2"
+              description="This is really cool"
+              image="/mountain_climb.png"
+            />
+            <FeatureCard
+              className="w-full md:w-1/4"
+              title="Argument 3"
+              description="This is really cool"
+              image="/mountain_climb.png"
+            />
+          </div>
+        </section>
+      </main>
     </>
-  )
+  );
 }
